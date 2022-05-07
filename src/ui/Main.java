@@ -69,6 +69,12 @@ public class Main{
 			
 			break;
 		
+        case 5:
+        break;
+
+        case 6:
+        break;
+
 		default:
 			System.out.println("Error, wrong option");
 		
