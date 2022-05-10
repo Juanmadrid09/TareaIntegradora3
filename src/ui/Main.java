@@ -58,7 +58,7 @@ public class Main{
 			registrarVehiculo();
 			break;
 		case 2:
-		
+		    calculatePrice();
 			break;
 	
 		case 3:
@@ -125,7 +125,7 @@ public void registrarVehiculo(){
     if(tecno==1){
 		System.out.println("¿Cual es el precio de este documento?");
 		 priceT=sc.nextDouble();
-		System.out.println("¿En que año se vence el Soat?");
+		System.out.println("¿En que año se vence la revision?");
 		 yearT=sc.nextInt();
 		System.out.println("¿Cual es el nivel de gas que indico el Vehiculo?");
 		 levelGas=sc.nextDouble();
@@ -202,10 +202,7 @@ if(typeCar==1){
 		 System.out.println(" Cuantos kilometros dura la bateria del carro?");
 		 int bateryDuration=sc.nextInt();
 
-		 System.out.println("De cuantos kilowats por kilometro es el consumo de su bateria?");
-	     int consumeBatery=sc.nextInt();
-
-		 counselor.registElectricCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, typec, bateryDuration, consumeBatery, typeVehicle);
+		 System.out.println( counselor.registElectricCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, typec, bateryDuration, typeVehicle));
 break;
 
          case 2:
@@ -223,10 +220,9 @@ break;
 		System.out.println("¿Cual es la capacidad del tanque en galones?");
 		int tankCapacity=sc.nextInt();
 
-		System.out.println("¿Cuantos galones de gasolina consume el carro por kilometro?");
-			int gasConsume=sc.nextInt();
+	
 
-			 counselor.registGasCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, tankCapacity, typeg, gasConsume, typeVehicle);
+		System.out.println( counselor.registGasCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, tankCapacity, typeg, typeVehicle));
 
  break;
 
@@ -242,8 +238,6 @@ break;
 		 System.out.println(" Cuantos kilometros dura la bateria del carro?");
 		 int bateryDurationh=sc.nextInt();
 
-		 System.out.println("De cuantos kilowats por kilometro es el consumo de su bateria?");
-	     int consumeBateryh=sc.nextInt();
 
 		 System.out.println("¿Que tipo de gasolina consume el carro?:\n"+"Corriente(1)\n"+"Diesel(2)\n"+"Extra(3)");
 		 int typegh=sc.nextInt();
@@ -258,11 +252,10 @@ break;
 	 System.out.println("¿Cual es la capacidad del tanque en galones?");
 	 int tankCapacityh=sc.nextInt();
 
-	 System.out.println("¿Cuantos galones de gasolina consume el carro por kilometro?");
-		 int gasConsumeh=sc.nextInt();
+	
 
 
-     counselor.registHibridCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, tankCapacityh, typegh, gasConsumeh, typech, bateryDurationh, consumeBateryh, typeVehicle);
+	 System.out.println( counselor.registHibridCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, tankCapacityh, typegh, typech, bateryDurationh, typeVehicle));
 
  break;
 
@@ -283,10 +276,9 @@ break;
 	System.out.println("¿Cual es la capacidad del tanque en galones?");
 	int gasCapacity=sc.nextInt();
 
-	System.out.println("¿Cuantos galones de gasolina consume la maotocicleta por kilometro?");
-		int gasConsume=sc.nextInt();
+	
 
-counselor.registMotorcicle(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, typem, gasCapacity, gasConsume, typeg, typeVehicle);
+	System.out.println(counselor.registMotorcicle(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, typem, gasCapacity, typeg, typeVehicle));
 
 
 	
@@ -295,6 +287,15 @@ counselor.registMotorcicle(basePrice, sellPrice, brand, model, displacement, kil
 	
 }
 
+public void calculatePrice(){
+
+	System.out.println("Por favor ingrese el id del vehiculo del cual quiere saber su precio total");
+String id=sc.next();
+
+System.out.println(counselor.calculatePrice(id));
+
+
+}
 
 
 

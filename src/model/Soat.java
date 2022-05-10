@@ -18,4 +18,28 @@ super.generateImage();
 }
 
 
+
+    /**
+     * @return double return the cover
+     */
+    public double getCover() {
+        return cover;
+    }
+
+    /**
+     * @param cover the cover to set
+     */
+    public void setCover(double cover) {
+        this.cover = cover;
+    }
+    public int getExpiration(){
+
+        return super.getYear();
+    
+    }
+
+    public double getPrice(){
+        return super.getPrice();
+    }
 }
+
