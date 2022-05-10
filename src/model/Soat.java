@@ -11,7 +11,11 @@ public Soat(double price, int year, double cover) {
 
 
 
+public void generateImage(){
 
+super.generateImage();
+
+}
 
 
 }

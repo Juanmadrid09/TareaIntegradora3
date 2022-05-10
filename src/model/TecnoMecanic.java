@@ -10,7 +10,11 @@ public TecnoMecanic(double price, int year, double levelGas) {
 }
 
 
+public void generateImage(){
 
+    super.generateImage();
+    
+    }
 
 
 

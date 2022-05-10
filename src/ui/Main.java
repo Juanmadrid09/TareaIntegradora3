@@ -55,7 +55,7 @@ public class Main{
 			System.out.println("Bye!");
 			break;
 		case 1:
-			
+			registrarVehiculo();
 			break;
 		case 2:
 		
@@ -83,7 +83,217 @@ public class Main{
 
 	}
 
+public void registrarVehiculo(){
 
+
+	System.out.println("Buenas, el vehiculo es nuevo(1) o es usado(2)?");
+    int typeVehicle=sc.nextInt();
+	while(typeVehicle<1 || typeVehicle>2){
+		System.out.println("Por favor eliga una de las opciones mostradas en pantalla");
+		typeVehicle=sc.nextInt();
+	}
+
+	System.out.println("Su vehiculo tiene soat(Si(1)/No(2))");
+	int soat=sc.nextInt();
+	double price=0;
+	int year=0;
+	double cover=0;
+	while(soat<1 || soat>2){
+		System.out.println("Por favor eliga una de las opciones mostradas en pantalla");
+		soat=sc.nextInt();
+	}
+    if(soat==1){
+		System.out.println("¿Cual es el precio de este documento?");
+		 price=sc.nextDouble();
+		System.out.println("¿En que año se vence el Soat?");
+		year=sc.nextInt();
+		System.out.println("¿De cuanto es el monto de cobertura por accidente?");
+		 cover=sc.nextDouble();
+		
+		
+	}
+    System.out.println("¿El vehiculo tiene revision tecno mecanica?(Si(1)/No(2))");
+
+		int tecno=sc.nextInt();
+		double priceT=0;
+		int yearT=0;
+		double levelGas=0;
+		while(tecno<1 || tecno>2){
+			System.out.println("Por favor eliga una de las opciones mostradas en pantalla");
+		tecno=sc.nextInt();
+		}
+    if(tecno==1){
+		System.out.println("¿Cual es el precio de este documento?");
+		 priceT=sc.nextDouble();
+		System.out.println("¿En que año se vence el Soat?");
+		 yearT=sc.nextInt();
+		System.out.println("¿Cual es el nivel de gas que indico el Vehiculo?");
+		 levelGas=sc.nextDouble();
+	
+	}
+
+	System.out.println("¿Cual es el precio base del Vehiculo?");
+	double basePrice=sc.nextDouble();
+
+	System.out.println("¿Cual es el precio de venta del Vehiculo?");
+	double sellPrice=sc.nextDouble();
+
+	System.out.println("¿Cual es la marca del Vehiculo?");
+	String brand=sc.next();
+
+	System.out.println("¿Que modelo es el Vehiculo?");
+	int model=sc.nextInt();
+
+	System.out.println("¿De cuanto es el cilindraje del Vehiculo?");
+	double displacement =sc.nextDouble();
+
+	System.out.println("¿Cuantos kilomtros ha recorrido el Vehiculo?");
+	double kilometers=sc.nextDouble();
+
+	String plate;
+	if(typeVehicle!=1){
+	System.out.println("¿Cual es la placa de este Vehiculo?");
+	plate =sc.next();
+	} else
+	plate="Sin asignar";
+
+
+	System.out.println("El vehiculo es un automobil(1) o es una motocicleta(2)? ");
+	int typeCar=sc.nextInt();
+	while(typeCar<1 || typeCar>2){
+		System.out.println("Por favor eliga una de las opciones mostradas en pantalla");
+		typeCar=sc.nextInt();
+
+		
+	}
+if(typeCar==1){
+
+	System.out.println("El automobil es un Sedan(1) o una camioneta(2)");
+	int typea=sc.nextInt();
+
+	System.out.println("¿Cuantas puertas tiene el automobil?");
+	 int numberDoors=sc.nextInt();
+
+	 System.out.println("¿El vehiculo tiene vidrios polarizados?(Si/No)");
+		String polarizedWindows=sc.next();
+		while(polarizedWindows.length()>2 || polarizedWindows.length()<2){
+			System.out.println("Por favor eliga una de las opciones mostradas en pantalla");
+		polarizedWindows=sc.next();
+		}
+	
+
+	System.out.println("El automobil es: \n"+" Electrico(1)\n"+"Gasolina(2)\n"+"Hibrido(3)");
+		int typeAutomobile=sc.nextInt();
+		while(typeAutomobile<1 || typeAutomobile>3){
+			System.out.println("Por favor eliga una de las opciones mostradas en pantalla");
+		typeAutomobile=sc.nextInt();
+		}
+        switch(typeAutomobile){
+
+         case 1:
+
+		 System.out.println("Que tipo de cargador tiene el carro:\n"+"Rapido(1)\n"+"Normal(2)");
+		 int typec=sc.nextInt();
+		 while(typec<1 || typec>2){
+			System.out.println("Por favor eliga una de las opciones mostradas en pantalla");
+			typec=sc.nextInt();
+		 }
+
+		 System.out.println(" Cuantos kilometros dura la bateria del carro?");
+		 int bateryDuration=sc.nextInt();
+
+		 System.out.println("De cuantos kilowats por kilometro es el consumo de su bateria?");
+	     int consumeBatery=sc.nextInt();
+
+		 counselor.registElectricCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, typec, bateryDuration, consumeBatery, typeVehicle);
+break;
+
+         case 2:
+
+		 System.out.println("¿Que tipo de gasolina consume el carro?:\n"+"Corriente(1)\n"+"Diesel(2)\n"+"Extra(3)");
+			int typeg=sc.nextInt();
+
+        while(typeg<1 || typeg>3){
+
+			System.out.println("Por favor eliga una de las opciones mostradas en pantalla");
+			typeg=sc.nextInt();
+
+		}
+
+		System.out.println("¿Cual es la capacidad del tanque en galones?");
+		int tankCapacity=sc.nextInt();
+
+		System.out.println("¿Cuantos galones de gasolina consume el carro por kilometro?");
+			int gasConsume=sc.nextInt();
+
+			 counselor.registGasCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, tankCapacity, typeg, gasConsume, typeVehicle);
+
+ break;
+
+         case 3:
+
+		 System.out.println("Que tipo de cargador tiene el carro:\n"+"Rapido(1)\n"+"Normal(2)");
+		 int typech=sc.nextInt();
+		 while(typech<1 || typech>2){
+			System.out.println("Por favor eliga una de las opciones mostradas en pantalla");
+			typech=sc.nextInt();
+		 }
+
+		 System.out.println(" Cuantos kilometros dura la bateria del carro?");
+		 int bateryDurationh=sc.nextInt();
+
+		 System.out.println("De cuantos kilowats por kilometro es el consumo de su bateria?");
+	     int consumeBateryh=sc.nextInt();
+
+		 System.out.println("¿Que tipo de gasolina consume el carro?:\n"+"Corriente(1)\n"+"Diesel(2)\n"+"Extra(3)");
+		 int typegh=sc.nextInt();
+
+	 while(typegh<1 || typegh>3){
+
+		 System.out.println("Por favor eliga una de las opciones mostradas en pantalla");
+		 typegh=sc.nextInt();
+
+	 }
+
+	 System.out.println("¿Cual es la capacidad del tanque en galones?");
+	 int tankCapacityh=sc.nextInt();
+
+	 System.out.println("¿Cuantos galones de gasolina consume el carro por kilometro?");
+		 int gasConsumeh=sc.nextInt();
+
+
+     counselor.registHibridCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, tankCapacityh, typegh, gasConsumeh, typech, bateryDurationh, consumeBateryh, typeVehicle);
+
+ break;
+
+		}
+}  else{
+
+	System.out.println("La moto que tipo es:\n"+"Cross(1)\n"+"Scooter(2)\n"+"Deportiva(3)\n"+"estandar(4)");
+	int typem=sc.nextInt();
+
+	while(typem<1 || typem>4){
+		System.out.println("Por favor eliga una de las opciones mostradas en pantalla");
+		 typem=sc.nextInt();
+	}
+
+	System.out.println("¿Que tipo de gasolina consume el carro?:\n"+"Corriente(1)\n"+"Diesel(2)\n"+"Extra(3)");
+	int typeg=sc.nextInt();
+
+	System.out.println("¿Cual es la capacidad del tanque en galones?");
+	int gasCapacity=sc.nextInt();
+
+	System.out.println("¿Cuantos galones de gasolina consume la maotocicleta por kilometro?");
+		int gasConsume=sc.nextInt();
+
+counselor.registMotorcicle(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, typem, gasCapacity, gasConsume, typeg, typeVehicle);
+
+
+	
+}
+
+	
+}
 
 
 
