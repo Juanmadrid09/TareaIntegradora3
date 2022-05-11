@@ -367,12 +367,12 @@ return ans;
 
 
 }
-public void ShowVehicles(){
+public void ShowVehicles(TypeV type){
 
     System.out.println("AUTOMOBILES: \n\n");
     System.out.println("ELECTRICOS: \n\n");
      for(int i=0;i<Cars.size();i++){
-    if(Cars.get(i) instanceof ElectricCar){
+    if(Cars.get(i) instanceof ElectricCar && Cars.get(i).getTypevehicle().equals(type)){
         calculatePrice(Cars.get(i).getId());
     ((ElectricCar)Cars.get(i)).getConsumeBatery();
     System.out.println(((ElectricCar)Cars.get(i)).toString());
@@ -380,7 +380,7 @@ public void ShowVehicles(){
     }
     System.out.println("\n GASOLINA: \n\n");
     for(int i=0;i<Cars.size();i++){
-        if(Cars.get(i) instanceof GasCar){
+        if(Cars.get(i) instanceof GasCar && Cars.get(i).getTypevehicle().equals(type)){
             calculatePrice(Cars.get(i).getId());
             ((GasCar)Cars.get(i)).gasConsumption();
         System.out.println(((GasCar)Cars.get(i)).toString());
@@ -388,7 +388,7 @@ public void ShowVehicles(){
         }
      System.out.println("\n HIBRIDO: \n\n");
      for(int i=0;i<Cars.size();i++){
-         if(Cars.get(i) instanceof HibridCar){
+         if(Cars.get(i) instanceof HibridCar && Cars.get(i).getTypevehicle().equals(type)){
             calculatePrice(Cars.get(i).getId());
             ((HibridCar)Cars.get(i)).getConsumeBatery();
             ((HibridCar)Cars.get(i)).gasConsumption();
@@ -400,8 +400,8 @@ public void ShowVehicles(){
           System.out.println("\n\n MOTOCICLETAS: \n\n");
           System.out.println("ESTANDAR : \n\n");
           for(int i=0;i<Cars.size();i++){
-            if(Cars.get(i) instanceof Motorcicle){
-                if(((Motorcicle)Cars.get(i)).getTypeMotorcicle().equals(TypeM.STANDARD)){
+            if(Cars.get(i) instanceof Motorcicle && Cars.get(i).getTypevehicle().equals(type)){
+                if(((Motorcicle)Cars.get(i)).getTypeMotorcicle().equals(TypeM.STANDARD) ){
                     calculatePrice(Cars.get(i).getId());
                     ((Motorcicle)Cars.get(i)).gasConsumption();
             System.out.println(((Motorcicle)Cars.get(i)).toString());
@@ -411,7 +411,7 @@ public void ShowVehicles(){
             
              System.out.println("\nDEPORTIVO : \n\n");
              for(int i=0;i<Cars.size();i++){
-               if(Cars.get(i) instanceof Motorcicle){
+               if(Cars.get(i) instanceof Motorcicle && Cars.get(i).getTypevehicle().equals(type)){
                    if(((Motorcicle)Cars.get(i)).getTypeMotorcicle().equals(TypeM.SPORT)){
                     calculatePrice(Cars.get(i).getId());
                     ((Motorcicle)Cars.get(i)).gasConsumption();
@@ -421,7 +421,7 @@ public void ShowVehicles(){
                 } 
                 System.out.println("\nSCOOTER : \n\n");
                 for(int i=0;i<Cars.size();i++){
-                  if(Cars.get(i) instanceof Motorcicle){
+                  if(Cars.get(i) instanceof Motorcicle && Cars.get(i).getTypevehicle().equals(type)){
                       if(((Motorcicle)Cars.get(i)).getTypeMotorcicle().equals(TypeM.SCOOTER)){
                         calculatePrice(Cars.get(i).getId());
                         ((Motorcicle)Cars.get(i)).gasConsumption();
@@ -431,7 +431,7 @@ public void ShowVehicles(){
                    } 
                    System.out.println("\nCROSS : \n\n");
                    for(int i=0;i<Cars.size();i++){
-                     if(Cars.get(i) instanceof Motorcicle){
+                     if(Cars.get(i) instanceof Motorcicle && Cars.get(i).getTypevehicle().equals(type)){
                          if(((Motorcicle)Cars.get(i)).getTypeMotorcicle().equals(TypeM.CROSS)){
                             calculatePrice(Cars.get(i).getId());
                             ((Motorcicle)Cars.get(i)).gasConsumption();
@@ -444,11 +444,11 @@ public void ShowInfo(){
 
     System.out.println("VEHICULOS NUEVOS: \n\n\n");
 
-    ShowVehicles();
+    ShowVehicles(TypeV.NEW);
 
     System.out.println("VEHICULOS USADOS: \n");
 
-    ShowVehicles();
+    ShowVehicles(TypeV.OLD);
 
 }
 
