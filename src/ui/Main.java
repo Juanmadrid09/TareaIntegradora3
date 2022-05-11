@@ -62,7 +62,7 @@ public class Main{
 			break;
 	
 		case 3:
-			
+			generateInfo();
 			break;
 
 		case 4:
@@ -135,8 +135,7 @@ public void registrarVehiculo(){
 	System.out.println("¿Cual es el precio base del Vehiculo?");
 	double basePrice=sc.nextDouble();
 
-	System.out.println("¿Cual es el precio de venta del Vehiculo?");
-	double sellPrice=sc.nextDouble();
+
 
 	System.out.println("¿Cual es la marca del Vehiculo?");
 	String brand=sc.next();
@@ -176,9 +175,12 @@ if(typeCar==1){
 
 	 System.out.println("¿El vehiculo tiene vidrios polarizados?(Si/No)");
 		String polarizedWindows=sc.next();
-		while(polarizedWindows.length()>2 || polarizedWindows.length()<2){
+		polarizedWindows.toUpperCase();
+
+		while(polarizedWindows.equals("SI") || polarizedWindows.equals("NO")){
 			System.out.println("Por favor eliga una de las opciones mostradas en pantalla");
 		polarizedWindows=sc.next();
+		polarizedWindows.toUpperCase();
 		}
 	
 
@@ -202,7 +204,7 @@ if(typeCar==1){
 		 System.out.println(" Cuantos kilometros dura la bateria del carro?");
 		 int bateryDuration=sc.nextInt();
 
-		 System.out.println( counselor.registElectricCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, typec, bateryDuration, typeVehicle));
+		 System.out.println( counselor.registElectricCar(basePrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, typec, bateryDuration, typeVehicle));
 break;
 
          case 2:
@@ -222,7 +224,7 @@ break;
 
 	
 
-		System.out.println( counselor.registGasCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, tankCapacity, typeg, typeVehicle));
+		System.out.println( counselor.registGasCar(basePrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, tankCapacity, typeg, typeVehicle));
 
  break;
 
@@ -255,7 +257,7 @@ break;
 	
 
 
-	 System.out.println( counselor.registHibridCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, tankCapacityh, typegh, typech, bateryDurationh, typeVehicle));
+	 System.out.println( counselor.registHibridCar(basePrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, numberDoors, polarizedWindows, typea, tankCapacityh, typegh, typech, bateryDurationh, typeVehicle));
 
  break;
 
@@ -278,7 +280,7 @@ break;
 
 	
 
-	System.out.println(counselor.registMotorcicle(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, typem, gasCapacity, typeg, typeVehicle));
+	System.out.println(counselor.registMotorcicle(basePrice, brand, model, displacement, kilometers, plate, soat, price, year, cover, tecno, priceT, yearT, levelGas, typem, gasCapacity, typeg, typeVehicle));
 
 
 	
@@ -297,7 +299,11 @@ System.out.println(counselor.calculatePrice(id));
 
 }
 
+public void generateInfo(){
 
+counselor.ShowInfo();
+
+}
 
 
 

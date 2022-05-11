@@ -8,10 +8,10 @@ private TypeA typeAutomobile;
 
 
 
-    public Automobile(double basePrice, double sellPrice, String brand, int model, double displacement, double kilometers,
+    public Automobile(double basePrice, String brand, int model, double displacement, double kilometers,
         String plate, Soat soat, TecnoMecanic tecnoMecanic, TypeV typevehicle, int numberDoors, String polarizedWindows,
         TypeA typeAutomobile) {
-    super(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, tecnoMecanic, typevehicle);
+    super(basePrice, brand, model, displacement, kilometers, plate, soat, tecnoMecanic, typevehicle);
     this.numberDoors = numberDoors;
     this.polarizedWindows = polarizedWindows;
     this.typeAutomobile = typeAutomobile;
@@ -58,5 +58,17 @@ private TypeA typeAutomobile;
     public void setTypeAutomobile(TypeA typeAutomobile) {
         this.typeAutomobile = typeAutomobile;
     }
+
+
+public String toString(){
+
+
+
+
+return super.toString() +
+ "Numero de puertas: "+ numberDoors +"\n"+
+ "Vidrios polarizados: "+ polarizedWindows+"\n";
+}
+
 
 }

@@ -9,10 +9,10 @@ private int consumeBatery;
 
 
 
-public ElectricCar(double basePrice, double sellPrice, String brand, int model, double displacement, double kilometers,
+public ElectricCar(double basePrice, String brand, int model, double displacement, double kilometers,
                 String plate, Soat soat, TecnoMecanic tecnoMecanic, TypeV typevehicle, int numberDoors,
                 String polarizedWindows, TypeA typeAutomobile, TypeC typeCharger, int bateryDuration) {
-        super(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, tecnoMecanic, typevehicle,
+        super(basePrice, brand, model, displacement, kilometers, plate, soat, tecnoMecanic, typevehicle,
                         numberDoors, polarizedWindows, typeAutomobile);
         TypeCharger = typeCharger;
         this.bateryDuration = bateryDuration;
@@ -83,5 +83,13 @@ return answer;
     public void setConsumeBatery(int consumeBatery) {
         this.consumeBatery = consumeBatery;
     }
+
+public String toString(){
+
+return super.toString()+
+"Duracion de la bateria: "+bateryDuration+"\n"+
+"Consumo de bateria: "+ consumeBatery+ "\n"; 
+}
+
 
 }

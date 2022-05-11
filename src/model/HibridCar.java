@@ -12,11 +12,11 @@ public class HibridCar extends Automobile implements GasConsumption,BateryConsum
 
 
 
-    public HibridCar(double basePrice, double sellPrice, String brand, int model, double displacement,
+    public HibridCar(double basePrice, String brand, int model, double displacement,
             double kilometers, String plate, Soat soat, TecnoMecanic tecnoMecanic, TypeV typevehicle, int numberDoors,
             String polarizedWindows, TypeA typeAutomobile, int tankCapacity, TypeG typeGas,
             TypeC typeCharger, int bateryDuration) {
-        super(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, tecnoMecanic, typevehicle,
+        super(basePrice, brand, model, displacement, kilometers, plate, soat, tecnoMecanic, typevehicle,
                 numberDoors, polarizedWindows, typeAutomobile);
         this.tankCapacity = tankCapacity;
         this.typeGas = typeGas;
@@ -132,5 +132,16 @@ public class HibridCar extends Automobile implements GasConsumption,BateryConsum
     public void setConsumeBatery(int consumeBatery) {
         this.consumeBatery = consumeBatery;
     }
+
+
+public String toString(){
+
+return super.toString()+
+"Capacidad del tanque: "+ tankCapacity+"\n"+
+"Consumo de gasolina: "+ gasConsume+"\n"+
+"Duracion de la bateria: "+bateryDuration+"\n"+
+"Consumo de bateria: "+ consumeBatery+ "\n"; 
+
+}
 
 }

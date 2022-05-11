@@ -9,10 +9,10 @@ public class Motorcicle extends Vehicle implements GasConsumption{
 
 
 
-    public Motorcicle(double basePrice, double sellPrice, String brand, int model, double displacement,
+    public Motorcicle(double basePrice, String brand, int model, double displacement,
             double kilometers, String plate, Soat soat, TecnoMecanic tecnoMecanic, TypeV typevehicle,
             TypeM typeMotorcicle, int gasCapacity, TypeG typeGas) {
-        super(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, tecnoMecanic, typevehicle);
+        super(basePrice, brand, model, displacement, kilometers, plate, soat, tecnoMecanic, typevehicle);
         this.typeMotorcicle = typeMotorcicle;
         this.gasCapacity = gasCapacity;
         this.gasConsume =0;
@@ -89,5 +89,13 @@ public class Motorcicle extends Vehicle implements GasConsumption{
     public void setTypeGas(TypeG typeGas) {
         this.typeGas = typeGas;
     }
+
+    public String toString(){
+
+        return super.toString()+
+        "Capacidad del tanque: "+ gasCapacity+"\n"+
+        "Consumo de gasolina: "+ gasConsume+"\n";
+        }
+
 
 }

@@ -21,10 +21,10 @@ public  abstract class Vehicle{
 
 
 
-	public Vehicle( double basePrice, double sellPrice, String brand, int model, double displacement, double kilometers, String plate, Soat soat, TecnoMecanic tecnoMecanic,TypeV typevehicle){
+	public Vehicle( double basePrice, String brand, int model, double displacement, double kilometers, String plate, Soat soat, TecnoMecanic tecnoMecanic,TypeV typevehicle){
 		
 		this.basePrice=basePrice;
-		this.sellPrice=sellPrice;
+		this.sellPrice=0;
 		this.brand=brand;
 		this.model=model;
 		this.displacement=displacement;
@@ -36,7 +36,7 @@ public  abstract class Vehicle{
         this.typevehicle=typevehicle;
 		id="";
 		for(int i=0;i<6;i++){
-        id=id+(int)(Math.random()*(11-1)+1);
+        id=id+(int)(Math.random()*(10-1));
 		}
         
 	}
@@ -238,6 +238,18 @@ public void setId(String id) {
 		this.typevehicle = typevehicle;
 	}
 
+public String toString(){
 
+return "\nEl precio base del vehiculo es: "+ basePrice +"\n"+
+" El precio de venta del vehiculo es: "+ sellPrice + "\n" +
+"La marca del vehiculo es: "+ brand + "\n" +
+"El modelo del vehiculo es: "+ model + "\n"+
+"El cilindraje del vehiculo es: "+ displacement + "\n"+
+"Kilometros recorridos por el carro: "+ kilometers + "\n"+
+"Placa del vehiculo: "+ plate +"\n "+ 
+"Id del vehiculo: "+ id+ "\n";
+
+
+}
 
 }

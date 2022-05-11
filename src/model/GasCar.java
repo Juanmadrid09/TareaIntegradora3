@@ -14,10 +14,10 @@ private int gasConsume;
 
 
 
-public GasCar(double basePrice, double sellPrice, String brand, int model, double displacement, double kilometers,
+public GasCar(double basePrice, String brand, int model, double displacement, double kilometers,
         String plate, Soat soat, TecnoMecanic tecnoMecanic, TypeV typevehicle, int numberDoors, String polarizedWindows,
         TypeA typeAutomobile, int tankCapacity, TypeG typeGas) {
-    super(basePrice, sellPrice, brand, model, displacement, kilometers, plate, soat, tecnoMecanic, typevehicle,
+    super(basePrice, brand, model, displacement, kilometers, plate, soat, tecnoMecanic, typevehicle,
             numberDoors, polarizedWindows, typeAutomobile);
     this.tankCapacity = tankCapacity;
     this.typeGas = typeGas;
@@ -80,5 +80,12 @@ public double gasConsumption(){
     public void setGasConsume(int gasConsume) {
         this.gasConsume = gasConsume;
     }
+
+public String toString(){
+
+return super.toString()+
+"Capacidad del tanque: "+ tankCapacity+"\n"+
+"Consumo de gasolina: "+ gasConsume+"\n";
+}
 
 }

@@ -21,7 +21,7 @@ Cars= new ArrayList<Vehicle>();
 
 
 
-public String registElectricCar(double basePrice, double sellPrice, String brand, int model, double displacement, double kilometers,
+public String registElectricCar(double basePrice, String brand, int model, double displacement, double kilometers,
 String plate,int soat,double price, int year, double cover,int tecno, double priceT, int yearT, double levelGasT, int numberDoors, String polarizedWindows,
 int  typeAutomobile, int  typeCharger, int bateryDuration, int typeVehicle){
 
@@ -58,7 +58,7 @@ typec=TypeC.FAST;
 } else 
 typec=TypeC.NORMAL;
 
-Vehicle electricCar= new ElectricCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, SOAT, TECNO,typev, numberDoors, polarizedWindows, typea, typec, bateryDuration);
+Vehicle electricCar= new ElectricCar(basePrice, brand, model, displacement, kilometers, plate, SOAT, TECNO,typev, numberDoors, polarizedWindows, typea, typec, bateryDuration);
 
 if(typeVehicle==1){
 Cars.add(electricCar);
@@ -76,7 +76,7 @@ answer= answer +"\n"+ "el id de su vehiculo es: "+electricCar.getId();
 return answer;
 }
 
-public String registHibridCar(double basePrice, double sellPrice, String brand, int model, double displacement,
+public String registHibridCar(double basePrice, String brand, int model, double displacement,
 double kilometers, String plate,int soat,double price, int year, double cover,int tecno, double priceT, int yearT, double levelGasT, int numberDoors,
 String polarizedWindows, int typeAutomobile, int tankCapacity, int  typeGas,
 int typeCharger, int bateryDuration,int typeVehicle){
@@ -134,7 +134,7 @@ break;
 
 
 
-Vehicle hibridCAr=new HibridCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, SOAT, TECNO,typev, numberDoors, polarizedWindows, typea, tankCapacity,typeg, typec, bateryDuration);
+Vehicle hibridCAr=new HibridCar(basePrice, brand, model, displacement, kilometers, plate, SOAT, TECNO,typev, numberDoors, polarizedWindows, typea, tankCapacity,typeg, typec, bateryDuration);
 
 if(typeVehicle==1){
     Cars.add(hibridCAr);
@@ -152,7 +152,7 @@ if(typeVehicle==1){
 return answer;
 }
 
-public String registGasCar(double basePrice, double sellPrice, String brand, int model, double displacement, double kilometers,
+public String registGasCar(double basePrice, String brand, int model, double displacement, double kilometers,
 String plate,int soat,double price, int year, double cover,int tecno, double priceT, int yearT, double levelGasT, int numberDoors, String polarizedWindows,
 int typeAutomobile, int tankCapacity, int typeGas,int typeVehicle){
 
@@ -199,7 +199,7 @@ break;
 
 }
 
-Vehicle gasCar=new GasCar(basePrice, sellPrice, brand, model, displacement, kilometers, plate, SOAT, TECNO,typev, numberDoors, polarizedWindows, typea, tankCapacity, typeg);
+Vehicle gasCar=new GasCar(basePrice, brand, model, displacement, kilometers, plate, SOAT, TECNO,typev, numberDoors, polarizedWindows, typea, tankCapacity, typeg);
 
 if(typeVehicle==1){
     Cars.add(gasCar);
@@ -218,7 +218,7 @@ if(typeVehicle==1){
 return answer;
 }
 
-public String registMotorcicle(double basePrice, double sellPrice, String brand, int model, double displacement,
+public String registMotorcicle(double basePrice, String brand, int model, double displacement,
 double kilometers, String plate, int soat,double price, int year, double cover,int tecno, double priceT, int yearT, double levelGasT, int typeMotorcicle,
 int gasCapacity,int typeGas,int typeVehicle){
 
@@ -280,7 +280,7 @@ break;
 
 }
 
-Vehicle motorcicle=new Motorcicle(basePrice, sellPrice, brand, model, displacement, kilometers, plate, SOAT, TECNO,typev, typem, gasCapacity, typeg);
+Vehicle motorcicle=new Motorcicle(basePrice, brand, model, displacement, kilometers, plate, SOAT, TECNO,typev, typem, gasCapacity, typeg);
 
 if(typeVehicle==1){
     Cars.add(motorcicle);
@@ -353,6 +353,8 @@ if(Cars.get(i) instanceof GasCar){
 
 
 ans="El precio total de venta es: "+answer; 
+Cars.get(i).setSellPrice(answer);
+
 
 } else
 ans= " No se encontro el carro que ingreso";
@@ -365,5 +367,82 @@ return ans;
 
 
 }
+public void ShowVehicles(){
+
+    System.out.println("AUTOMOBILES: \n\n");
+    System.out.println("ELECTRICOS: \n\n");
+     for(int i=0;i<Cars.size();i++){
+    if(Cars.get(i) instanceof ElectricCar){
+    System.out.println(((ElectricCar)Cars.get(i)).toString());
+    }
+    }
+    System.out.println("\n GASOLINA: \n\n");
+    for(int i=0;i<Cars.size();i++){
+        if(Cars.get(i) instanceof GasCar){
+        System.out.println(((GasCar)Cars.get(i)).toString());
+        }
+        }
+     System.out.println("\n HIBRIDO: \n\n");
+     for(int i=0;i<Cars.size();i++){
+         if(Cars.get(i) instanceof HibridCar){
+         System.out.println(((HibridCar)Cars.get(i)).toString());
+         }
+          }
+
+          
+          System.out.println("\n\n MOTOCICLETAS: \n\n");
+          System.out.println("ESTANDAR : \n\n");
+          for(int i=0;i<Cars.size();i++){
+            if(Cars.get(i) instanceof Motorcicle){
+                if(((Motorcicle)Cars.get(i)).getTypeMotorcicle().equals(TypeM.STANDARD)){
+            System.out.println(((Motorcicle)Cars.get(i)).toString());
+             }
+            }
+             }
+            
+             System.out.println("\nDEPORTIVO : \n\n");
+             for(int i=0;i<Cars.size();i++){
+               if(Cars.get(i) instanceof Motorcicle){
+                   if(((Motorcicle)Cars.get(i)).getTypeMotorcicle().equals(TypeM.SPORT)){
+               System.out.println(((Motorcicle)Cars.get(i)).toString());
+                }
+               }
+                } 
+                System.out.println("\nSCOOTER : \n\n");
+                for(int i=0;i<Cars.size();i++){
+                  if(Cars.get(i) instanceof Motorcicle){
+                      if(((Motorcicle)Cars.get(i)).getTypeMotorcicle().equals(TypeM.SCOOTER)){
+                  System.out.println(((Motorcicle)Cars.get(i)).toString());
+                   }
+                  }
+                   } 
+                   System.out.println("\nCROSS : \n\n");
+                   for(int i=0;i<Cars.size();i++){
+                     if(Cars.get(i) instanceof Motorcicle){
+                         if(((Motorcicle)Cars.get(i)).getTypeMotorcicle().equals(TypeM.CROSS)){
+                     System.out.println(((Motorcicle)Cars.get(i)).toString());
+                      }
+                     }
+                      } 
+}
+public void ShowInfo(){
+
+    System.out.println("VEHICULOS NUEVOS: \n\n\n");
+
+    ShowVehicles();
+
+    System.out.println("VEHICULOS USADOS: \n");
+
+    ShowVehicles();
+
+}
+
+
+
+
+
+
+
+
 
 }
