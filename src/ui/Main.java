@@ -175,14 +175,17 @@ if(typeCar==1){
 
 	 System.out.println("¿El vehiculo tiene vidrios polarizados?(Si/No)");
 		String polarizedWindows=sc.next();
-		polarizedWindows.toUpperCase();
-
-		while(polarizedWindows.equals("SI") || polarizedWindows.equals("NO")){
+		polarizedWindows= polarizedWindows.toUpperCase();
+int flag=2;
+		while( flag==2){
+			if(polarizedWindows.equals("SI") || polarizedWindows.equals("NO")){
+				flag=1;
+		} else{
 			System.out.println("Por favor eliga una de las opciones mostradas en pantalla");
-		polarizedWindows=sc.next();
-		polarizedWindows.toUpperCase();
+			polarizedWindows=sc.next();
+		    polarizedWindows= polarizedWindows.toUpperCase();
 		}
-	
+		}
 
 	System.out.println("El automobil es: \n"+" Electrico(1)\n"+"Gasolina(2)\n"+"Hibrido(3)");
 		int typeAutomobile=sc.nextInt();
@@ -300,8 +303,8 @@ System.out.println(counselor.calculatePrice(id));
 }
 
 public void generateInfo(){
-
-counselor.ShowInfo();
+	System.out.println("\n");
+counselor.ShowVehicles();
 
 }
 
