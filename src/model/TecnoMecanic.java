@@ -49,8 +49,7 @@ public void generateImage(){
         return "Precio de la revision tecno-mecanica: "+super.getPrice()+"\n"+
         "Año de vencimiento: "+super.getYear()+"\n"+
         "Niveles de gases: "+levelGas+ "\n"+
-        "Numero de la revision tecno-mecanica: "+super.decryptionTecno()+"\n"+
-        super.printNumeric();
+        "Numero de la revision tecno-mecanica: "+super.decryptionTecno()+"\n";
         
         
         }

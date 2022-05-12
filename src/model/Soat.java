@@ -47,7 +47,7 @@ super.generateImage();
         return "Precio del soat: "+super.getPrice()+"\n"+
         "Año de vencimiento: "+super.getYear()+"\n"+
         "Cobertura por daños: "+cover+ "\n"+
-        "Numero del Soat: "+super.decryptionSoat()+"\n"+super.printNumeric();
+        "Numero del Soat: "+super.decryptionSoat()+"\n";
         
         }
 }

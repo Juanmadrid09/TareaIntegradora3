@@ -47,7 +47,7 @@ public void generatePropertyCard(){
 
     for (int x=0; x < propertyCard.length; x++) {
         for (int y=0; y < propertyCard[0].length; y++) {
-             propertyCard[x][y] = (int)(Math.random()*(100+1)+1);
+             propertyCard[x][y] = (int)(Math.random()*(10-1));
               }
               }
 
@@ -87,10 +87,10 @@ s= "Soat: \n"+soat.toString()+"\n";
 
 if(tecnoMecanic==null){
 
-    s="Tenco-mecanica: \n"+"Disculpe este vehiculo no cuenta con revision tecno mecanica \n";
+    t="Tenco-mecanica: \n"+"Disculpe este vehiculo no cuenta con revision tecno mecanica \n";
    
    }else 
-   s= "Tecno-mecanica: \n"+tecnoMecanic.toString()+"\n";
+   t= "Tecno-mecanica: \n"+tecnoMecanic.toString()+"\n";
 
    if(typevehicle.equals(TypeV.NEW)){
 p="Tarjeta de propiedad: \n"+ "Este auto al ser nuevo no posee numero de tarjeta de propieda\n";
@@ -101,8 +101,8 @@ p="Tarjeta de propiedad: \n"+ "Este auto al ser nuevo no posee numero de tarjeta
 
 
 
-
-        return s+t+p;
+answer=s+t+p;
+        return answer;
     }
 	
 	
