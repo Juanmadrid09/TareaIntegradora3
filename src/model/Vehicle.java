@@ -1,6 +1,6 @@
 package model;
 
-
+import javax.swing.plaf.TreeUI;
 
 public  abstract class Vehicle{
 	
@@ -57,10 +57,53 @@ public void generatePropertyCard(){
 
 
 	
+public String decryptionPropertyCard(){
+    String answer="";
+        for (int x=3; x >=0; x--) {
+            for (int y=3; y >=0; y--) {
+                 if((x+y)%2==0){
+                     answer=answer+propertyCard[x][y]; 
+                 }
+                  }
+                  }
+    
+    return answer;
+    
+    }
 	
 	
-	
-	
+	public String documents(){
+String answer="";
+String s="";
+String t="";
+String p="";
+
+if(soat==null){
+
+ s="Soat: \n"+"Disculpe este vehiculo no cuenta con Soat \n";
+
+}else 
+s= "Soat: \n"+soat.toString()+"\n";
+
+if(tecnoMecanic==null){
+
+    s="Tenco-mecanica: \n"+"Disculpe este vehiculo no cuenta con revision tecno mecanica \n";
+   
+   }else 
+   s= "Tecno-mecanica: \n"+tecnoMecanic.toString()+"\n";
+
+   if(typevehicle.equals(TypeV.NEW)){
+p="Tarjeta de propiedad: \n"+ "Este auto al ser nuevo no posee numero de tarjeta de propieda\n";
+
+
+   }else
+   p="Tarjeta de propiedad: \n"+ decryptionPropertyCard()+"\n";
+
+
+
+
+        return s+t+p;
+    }
 	
 	
 	

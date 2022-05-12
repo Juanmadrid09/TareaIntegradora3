@@ -28,6 +28,73 @@ public void  generateImage(){
 
 }
 
+public String printNumeric(){
+    String print ="";
+    for (int i=0; i< image.length; i++ ) { // filas numbers.length
+        for (int j = 0; j < image[0].length; j++) { //columnas numbers[0].length
+            print += image[i][j] + " ";
+        }
+        print += "\n";
+    }
+    return print;
+}
+
+
+
+
+
+public String decryptionSoat(){
+String answer="";
+    for (int x=0; x < image.length; x++) {
+        for (int y=0; y < image[0].length; y++) {
+             if(x<3){
+                 if(y==0){
+                 answer=answer+image[x][y];
+                 }
+             }else 
+             answer=answer+image[x][y];
+
+
+
+              }
+              }
+
+return answer;
+
+}
+
+public String decryptionTecno(){
+    String answer="";
+        for (int x=0; x < image.length; x++) {
+            for (int y=0; y < image[0].length; y++) {
+                 if(x==0){
+                     answer=answer+image[x][y];
+                 }
+                 if(x==1){
+                     if(y==2){
+                     answer=answer+image[x][y];
+                     }
+                 }
+                 if(x==2){
+                     if(y==1){
+                    answer=answer+image[x][y];
+                     }
+                }
+                if(x==3){
+                    answer=answer+image[x][y];
+                }
+    
+                  }
+                  }
+    
+    return answer;
+    
+    }
+
+
+
+
+
 
 
 

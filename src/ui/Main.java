@@ -66,7 +66,7 @@ public class Main{
 			break;
 
 		case 4:
-			
+			generateDocs();
 			break;
 		
         case 5:
@@ -308,7 +308,17 @@ counselor.ShowVehicles();
 
 }
 
+public void generateDocs(){
 
+	System.out.println("Por favor ingrese el id del vehiculo del cual quiere saber la informacion de sus documentos");
+	String id=sc.next();
+
+
+	System.out.println("\n");
+	System.out.println(counselor.ShowDocuments(id));
+
+
+}
 
 
 

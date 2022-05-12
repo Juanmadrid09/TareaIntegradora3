@@ -472,7 +472,27 @@ public void ShowVehicles(){
 }
 
 
+public String ShowDocuments(String id){
+String answer="";
 
+for(int i=0;i<Cars.size();i++){
+
+
+if(Cars.get(i).getId().equals(id)){
+
+answer= Cars.get(i).documents();
+
+}else
+answer="disculpe no se encontro el vehiculo que ingreso";
+
+
+}
+
+
+return answer;
+
+
+}
 
 
 

@@ -41,5 +41,14 @@ super.generateImage();
     public double getPrice(){
         return super.getPrice();
     }
+    public String toString(){
+
+
+        return "Precio del soat: "+super.getPrice()+"\n"+
+        "Año de vencimiento: "+super.getYear()+"\n"+
+        "Cobertura por daños: "+cover+ "\n"+
+        "Numero del Soat: "+super.decryptionSoat()+"\n"+super.printNumeric();
+        
+        }
 }
 
