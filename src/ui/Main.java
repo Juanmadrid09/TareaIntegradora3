@@ -36,8 +36,8 @@ public class Main{
 		System.out.println(
 				"Menu principal, por favor elija una opcion\n" +
 				"(1) Registrar un vehiculo \n" +
-				"(2) Calcular el precio total de venta de un vehículo \n"+
-				"(3) Generar informes con todos los datos de los vehículos\n"+
+				"(2) Calcular el precio total de venta de un vehiculo \n"+
+				"(3) Generar informes con todos los datos de los vehiculos\n"+
 				"(4) Mostrar el estado de documentos de un vehiculo\n" +  
                 "(5) Mapa del parqueadero\n" +
                 "(6) Ocupacion del parqueadero\n"+
@@ -70,6 +70,7 @@ public class Main{
 			break;
 		
         case 5:
+		    map();
         break;
 
         case 6:
@@ -321,7 +322,16 @@ public void generateDocs(){
 }
 
 
+public void map(){
 
+	System.out.println("\n");
+	System.out.println(counselor.printParking());
+
+
+
+
+
+}
 
 
 

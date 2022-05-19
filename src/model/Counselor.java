@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Counselor{
 
     private ArrayList<Vehicle> Cars;
-	
+	private Vehicle[][] parking;
 
 
 
@@ -12,7 +12,8 @@ public class Counselor{
     public Counselor() {
 
 Cars= new ArrayList<Vehicle>();
-
+parking= new Vehicle[10][5];
+    
 
 
 
@@ -59,6 +60,8 @@ typec=TypeC.FAST;
 typec=TypeC.NORMAL;
 
 Vehicle electricCar= new ElectricCar(basePrice, brand, model, displacement, kilometers, plate, SOAT, TECNO,typev, numberDoors, polarizedWindows, typea, typec, bateryDuration);
+
+parkingSelection(model, electricCar);
 
 if(typeVehicle==1){
 Cars.add(electricCar);
@@ -136,6 +139,8 @@ break;
 
 Vehicle hibridCAr=new HibridCar(basePrice, brand, model, displacement, kilometers, plate, SOAT, TECNO,typev, numberDoors, polarizedWindows, typea, tankCapacity,typeg, typec, bateryDuration);
 
+parkingSelection(model, hibridCAr);
+
 if(typeVehicle==1){
     Cars.add(hibridCAr);
     answer= " se registro correctamente el vehiculo nuevo ";
@@ -200,6 +205,8 @@ break;
 }
 
 Vehicle gasCar=new GasCar(basePrice, brand, model, displacement, kilometers, plate, SOAT, TECNO,typev, numberDoors, polarizedWindows, typea, tankCapacity, typeg);
+
+parkingSelection(model, gasCar);
 
 if(typeVehicle==1){
     Cars.add(gasCar);
@@ -281,6 +288,8 @@ break;
 }
 
 Vehicle motorcicle=new Motorcicle(basePrice, brand, model, displacement, kilometers, plate, SOAT, TECNO,typev, typem, gasCapacity, typeg);
+
+parkingSelection(model, motorcicle);
 
 if(typeVehicle==1){
     Cars.add(motorcicle);
@@ -495,9 +504,130 @@ return answer;
 }
 
 
+public void parkingSelection(int model, Vehicle vehicle){
+
+
+if(vehicle.getTypevehicle()==TypeV.OLD){
+
+if(model<2015){
+
+switch(model){
+
+case 2014:
+
+for(int i=0;i<parking.length;i++){
+
+if (parking[i][0]==null){
+parking[i][0]=vehicle;
+}
+
+}
+
+break;
+
+case 2013:
+
+for(int i=0;i<parking.length;i++){
+
+    if (parking[i][1]==null){
+    parking[i][1]=vehicle;
+    }
+    
+    }
+    
+    break;
+
+
+case 2012: 
+
+
+for(int i=0;i<parking.length;i++){
+
+    if (parking[i][2]==null){
+    parking[i][2]=vehicle;
+    }
+    
+    }
+    
+    break;
+
+case 2011:
+
+for(int i=0;i<parking.length;i++){
+
+    if (parking[i][3]==null){
+    parking[i][3]=vehicle;
+    }
+    
+    }
+    
+    break;
+
+    
+        
+
+
+}
+
+if(model<2011){
+for(int i=0;i<parking.length;i++){
+
+    if (parking[i][4]==null){
+    parking[i][4]=vehicle;
+    }
+    
+    }
+    
+}
+
+
+}
+
+
+}
+
+}
 
 
 
+public String printParking(){
+
+
+String out="            MAPA PARQUEADERO "+"\n\n";
+
+
+  out+="|    2014     |     2013    |    2012     |    2011     |    2010>    | "+ "\n" + "**********************************************************************"+"\n";
+
+for(int i=0;i<parking.length;i++){
+
+
+for(int x=0;x<parking[0].length;x++){
+
+
+if(parking[i][x]==null){
+
+out+="*   (empty)  *";
+
+} else
+out+="* (occupied) *";
+
+
+
+}
+
+
+out+="\n"+"**********************************************************************"+"\n";
+
+
+
+}
+
+
+
+
+
+ return out;
+}
 
 
 }
