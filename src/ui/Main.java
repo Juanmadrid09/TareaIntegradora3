@@ -74,6 +74,7 @@ public class Main{
         break;
 
         case 6:
+		ocupationParking();
         break;
 
 		default:
@@ -139,7 +140,8 @@ public void registrarVehiculo(){
 
 
 	System.out.println("¿Cual es la marca del Vehiculo?");
-	String brand=sc.next();
+	String brand=sc.nextLine();
+	brand=sc.nextLine();
 
 	System.out.println("¿Que modelo es el Vehiculo?");
 	int model=sc.nextInt();
@@ -334,7 +336,54 @@ public void map(){
 }
 
 
+public void ocupationParking(){
 
+	int option=0;
+
+	System.out.println("Que informacion desea: \n"+"(1) Listado de vehiculos dado un rango\n"+"(2) Datos del vehiculo mas viejo y nuevo\n"+"(3) Porcentaje de ocupacion del parqueadero\n");
+    option= sc.nextInt();
+
+	if(option>3 || option<1){
+		System.out.println("Por favor ingrese una de las opciones presentadas en pantalla");
+		option= sc.nextInt();
+	}
+    
+switch(option){
+
+case 1:
+
+System.out.println("De que modelo desea ver la informacion de los vehiculos:\n"+"(1)2014\n"+"(2)2013\n"+"(3)2012\n"+"(4)2011\n"+"(5)Menores a 2011");
+int answer=sc.nextInt();
+
+if(answer>5 || answer<1){
+	System.out.println("Por favor ingrese una de las opciones presentadas en pantalla");
+	answer= sc.nextInt();
+}
+
+System.out.println(counselor.generateInfo(answer));
+
+
+break;
+
+case 2:
+
+System.out.println(counselor.oldNewInfo());
+
+break;
+
+
+case 3: 
+
+System.out.println(counselor.percentageParking());
+
+break;
+
+}
+
+
+
+
+}
 
 
 

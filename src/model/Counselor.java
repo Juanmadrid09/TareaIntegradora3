@@ -519,6 +519,7 @@ for(int i=0;i<parking.length;i++){
 
 if (parking[i][0]==null){
 parking[i][0]=vehicle;
+break;
 }
 
 }
@@ -531,6 +532,7 @@ for(int i=0;i<parking.length;i++){
 
     if (parking[i][1]==null){
     parking[i][1]=vehicle;
+    break;
     }
     
     }
@@ -545,6 +547,7 @@ for(int i=0;i<parking.length;i++){
 
     if (parking[i][2]==null){
     parking[i][2]=vehicle;
+    break;
     }
     
     }
@@ -557,6 +560,7 @@ for(int i=0;i<parking.length;i++){
 
     if (parking[i][3]==null){
     parking[i][3]=vehicle;
+    break;
     }
     
     }
@@ -574,6 +578,7 @@ for(int i=0;i<parking.length;i++){
 
     if (parking[i][4]==null){
     parking[i][4]=vehicle;
+    break;
     }
     
     }
@@ -628,6 +633,154 @@ out+="\n"+"*********************************************************************
 
  return out;
 }
+
+
+
+
+
+
+
+
+
+public String generateInfo(int option){
+
+    String out="";
+option=option-1;
+
+for(int x=0;x<parking.length;x++){
+
+if(parking[x][option]!=null){
+
+if(parking[x][option] instanceof GasCar){
+out+=((GasCar) parking[x][option]).toString()+"\n\n";
+} else if(parking[x][option] instanceof ElectricCar){
+    out+=((ElectricCar) parking[x][option]).toString()+"\n\n";
+}else if(parking[x][option] instanceof HibridCar){
+    out+=((HibridCar) parking[x][option]).toString()+"\n\n";
+}else if(parking[x][option] instanceof Motorcicle){
+    out+=((Motorcicle) parking[x][option]).toString()+"\n\n";
+}
+
+
+}
+
+
+
+}
+
+
+
+return out;
+
+
+}
+
+public String oldNewInfo(){
+
+    String out="";
+    int xold=0;
+    int yold=0;
+    int xnew=0;
+    int ynew=0;
+    int  Old=0;
+ int  New=0;
+
+for(int x=0;x<parking.length;x++){
+
+for(int y=0;y<parking[0].length;y++){
+
+if(parking[x][y]!=null){
+
+if(parking[x][y].getModel()>New){
+
+   New= parking[x][y].getModel();
+   xnew=x;
+   ynew=y;
+}
+
+if(parking[x][y].getModel()<Old){
+
+    Old= parking[x][y].getModel();
+    xold=x;
+    yold=y;
+ }
+
+}
+
+
+}
+
+
+}
+
+out= " \n\n Informacion del vehiculo mas reciente: "+"\n\n";
+
+if(New!=0){
+
+if(parking[xnew][ynew] instanceof GasCar){
+    out+=((GasCar)parking[xnew][ynew]).toString()+"\n\n";
+    } else if(parking[xnew][ynew] instanceof ElectricCar){
+        out+=((ElectricCar) parking[xnew][ynew]).toString()+"\n\n";
+    }else if(parking[xnew][ynew] instanceof HibridCar){
+        out+=((HibridCar) parking[xnew][ynew]).toString()+"\n\n";
+    }else if(parking[xnew][ynew] instanceof Motorcicle){
+        out+=((Motorcicle)parking[xnew][ynew]).toString()+"\n\n";
+    }
+
+}else
+out+=" No Hay autos en el parqueadero\n\n";
+
+out+=" Informacion del vehiculo mas antiguo: "+"\n\n";
+
+if(Old!=0){
+if(parking[xold][yold] instanceof GasCar){
+    out+=((GasCar) parking[xold][yold]).toString()+"\n\n";
+    } else if(parking[xold][yold] instanceof ElectricCar){
+        out+=((ElectricCar) parking[xold][yold]).toString()+"\n\n";
+    }else if(parking[xold][yold] instanceof HibridCar){
+        out+=((HibridCar)parking[xold][yold]).toString()+"\n\n";
+    }else if(parking[xold][yold] instanceof Motorcicle){
+        out+=((Motorcicle)parking[xold][yold]).toString()+"\n\n";
+    }
+
+}else 
+out+=" No Hay autos en el parqueadero\n\n";
+
+    return out;
+
+}
+
+public String percentageParking(){
+
+    int number=0;
+
+    for(int x=0;x<parking.length;x++){
+
+        for(int y=0;y<parking[0].length;y++){
+
+       if(parking[x][y]!=null){
+
+       number++;
+       }
+
+        }
+
+
+
+    }
+
+int answer= (number*100)/50;
+
+String out=" El Porcentaje de ocupacion del parqueadero es del "+ answer+"%\n\n";
+if(answer==100){
+
+out+="El parqueadero necesita ser ampliado\n\n ";
+
+}
+
+return out;
+}
+
 
 
 }
