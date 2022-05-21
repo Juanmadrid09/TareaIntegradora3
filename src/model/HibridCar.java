@@ -143,5 +143,5 @@ return super.toString()+
 "Consumo de bateria: "+ consumeBatery+ "\n"; 
 
 }
-
+    
 }
