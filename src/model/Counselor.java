@@ -601,7 +601,7 @@ for(int i=0;i<Cars.size();i++){
 if(Cars.get(i).getId().equals(id)){
 
 answer= Cars.get(i).documents();
-
+break;
 }else
 answer="disculpe no se encontro el vehiculo que ingreso";
 
@@ -806,8 +806,8 @@ public String oldNewInfo(){
     int yold=0;
     int xnew=0;
     int ynew=0;
-    int  Old=0;
- int  New=0;
+    int  Old=2016;//cannot be initialized to 0 since no model is less than 0
+    int  New=0;
 
 for(int x=0;x<parking.length;x++){
 
