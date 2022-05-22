@@ -8,7 +8,21 @@ public class Motorcicle extends Vehicle implements GasConsumption{
     private TypeG typeGas;
 
 
-
+/**
+ * constructor of the class
+ * @param basePrice
+ * @param brand
+ * @param model
+ * @param displacement
+ * @param kilometers
+ * @param plate
+ * @param soat
+ * @param tecnoMecanic
+ * @param typevehicle
+ * @param typeMotorcicle
+ * @param gasCapacity
+ * @param typeGas
+ */
     public Motorcicle(double basePrice, String brand, int model, double displacement,
             double kilometers, String plate, Soat soat, TecnoMecanic tecnoMecanic, TypeV typevehicle,
             TypeM typeMotorcicle, int gasCapacity, TypeG typeGas) {
@@ -22,7 +36,7 @@ public class Motorcicle extends Vehicle implements GasConsumption{
 
 
 
-
+@Override
     public double gasConsumption(){
     double answer=0;
 

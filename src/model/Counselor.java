@@ -2,13 +2,21 @@ package model;
 import java.util.ArrayList;
 
 public class Counselor{
-
+/**
+ * Array list that contain the registed vehicles
+ */
     private ArrayList<Vehicle> Cars;
+
+    /**
+     * the matrix of the parking of the old cars
+     */
 	private Vehicle[][] parking;
 
 
 
-
+/**
+ * constructor of the class 
+ */
     public Counselor() {
 
 Cars= new ArrayList<Vehicle>();
@@ -21,7 +29,30 @@ parking= new Vehicle[10][5];
 
 
 
-
+/**
+ * method to create and  add a electric car to the arraylist of vehicles
+ * @param basePrice
+ * @param brand
+ * @param model
+ * @param displacement
+ * @param kilometers
+ * @param plate
+ * @param soat
+ * @param price
+ * @param year
+ * @param cover
+ * @param tecno
+ * @param priceT
+ * @param yearT
+ * @param levelGasT
+ * @param numberDoors
+ * @param polarizedWindows
+ * @param typeAutomobile
+ * @param typeCharger
+ * @param bateryDuration
+ * @param typeVehicle
+ * @return a message confirming that the vehicle has been successfully registered
+ */
 public String registElectricCar(double basePrice, String brand, int model, double displacement, double kilometers,
 String plate,int soat,double price, int year, double cover,int tecno, double priceT, int yearT, double levelGasT, int numberDoors, String polarizedWindows,
 int  typeAutomobile, int  typeCharger, int bateryDuration, int typeVehicle){
@@ -78,7 +109,32 @@ answer= answer +"\n"+ "el id de su vehiculo es: "+electricCar.getId();
 
 return answer;
 }
-
+/**
+ * method to create and add a hibrid car in the arraylist of vehicles
+ * @param basePrice
+ * @param brand
+ * @param model
+ * @param displacement
+ * @param kilometers
+ * @param plate
+ * @param soat
+ * @param price
+ * @param year
+ * @param cover
+ * @param tecno
+ * @param priceT
+ * @param yearT
+ * @param levelGasT
+ * @param numberDoors
+ * @param polarizedWindows
+ * @param typeAutomobile
+ * @param tankCapacity
+ * @param typeGas
+ * @param typeCharger
+ * @param bateryDuration
+ * @param typeVehicle
+ * @return a message confirming that the vehicle has been successfully registered
+ */
 public String registHibridCar(double basePrice, String brand, int model, double displacement,
 double kilometers, String plate,int soat,double price, int year, double cover,int tecno, double priceT, int yearT, double levelGasT, int numberDoors,
 String polarizedWindows, int typeAutomobile, int tankCapacity, int  typeGas,
@@ -156,7 +212,30 @@ if(typeVehicle==1){
 
 return answer;
 }
-
+/**
+ * method to create and add a gas car in the arraylist of vehicles
+ * @param basePrice
+ * @param brand
+ * @param model
+ * @param displacement
+ * @param kilometers
+ * @param plate
+ * @param soat
+ * @param price
+ * @param year
+ * @param cover
+ * @param tecno
+ * @param priceT
+ * @param yearT
+ * @param levelGasT
+ * @param numberDoors
+ * @param polarizedWindows
+ * @param typeAutomobile
+ * @param tankCapacity
+ * @param typeGas
+ * @param typeVehicle
+ * @return a message confirming that the vehicle has been successfully registered
+ */
 public String registGasCar(double basePrice, String brand, int model, double displacement, double kilometers,
 String plate,int soat,double price, int year, double cover,int tecno, double priceT, int yearT, double levelGasT, int numberDoors, String polarizedWindows,
 int typeAutomobile, int tankCapacity, int typeGas,int typeVehicle){
@@ -224,7 +303,28 @@ if(typeVehicle==1){
 
 return answer;
 }
-
+/**
+ * method to create and add a motorcicle in the arraylist of vehicles
+ * @param basePrice
+ * @param brand
+ * @param model
+ * @param displacement
+ * @param kilometers
+ * @param plate
+ * @param soat
+ * @param price
+ * @param year
+ * @param cover
+ * @param tecno
+ * @param priceT
+ * @param yearT
+ * @param levelGasT
+ * @param typeMotorcicle
+ * @param gasCapacity
+ * @param typeGas
+ * @param typeVehicle
+ * @return a message confirming that the vehicle has been successfully registered
+ */
 public String registMotorcicle(double basePrice, String brand, int model, double displacement,
 double kilometers, String plate, int soat,double price, int year, double cover,int tecno, double priceT, int yearT, double levelGasT, int typeMotorcicle,
 int gasCapacity,int typeGas,int typeVehicle){
@@ -307,7 +407,11 @@ if(typeVehicle==1){
 return answer;
 }
 
-
+/**
+ * method to calculate the total price of a vehicle using an id
+ * @param id
+ * @return a message with the price
+ */
 public String  calculatePrice(String id){
 
 String ans="";
@@ -376,6 +480,9 @@ return ans;
 
 
 }
+/**
+ * method to show all the information of the vehicles registered
+ */
 public void ShowVehicles(){
 
     for(int i=0;i<Cars.size();i++){
@@ -480,7 +587,11 @@ public void ShowVehicles(){
                     }
 }
 
-
+/**
+ * method that show the documents of a determinate vehicle using their id
+ * @param id
+ * @return a message with the information of the documents
+ */
 public String ShowDocuments(String id){
 String answer="";
 
@@ -503,7 +614,11 @@ return answer;
 
 }
 
-
+/**
+ * method that, depending on the model of a vehicle, adds it to the parking lot in a specific column. 
+ * @param model
+ * @param vehicle
+ */
 public void parkingSelection(int model, Vehicle vehicle){
 
 
@@ -594,7 +709,9 @@ for(int i=0;i<parking.length;i++){
 }
 
 
-
+/**
+ * method that print the parking
+ */
 public String printParking(){
 
 
@@ -641,7 +758,11 @@ out+="\n"+"*********************************************************************
 
 
 
-
+/**
+ * method that depending on the choice of the person shows the information of the vehicles in a column
+ * @param option
+ * @return message with the information
+ */
 public String generateInfo(int option){
 
     String out="";
@@ -674,7 +795,10 @@ return out;
 
 
 }
-
+/**
+ * method of displaying the oldest and most recent vehicle information
+ * @return a message with the information
+ */
 public String oldNewInfo(){
 
     String out="";
@@ -749,7 +873,9 @@ out+=" No Hay autos en el parqueadero\n\n";
     return out;
 
 }
-
+/**
+ * method showing the parking lot occupancy percentage
+ */
 public String percentageParking(){
 
     int number=0;

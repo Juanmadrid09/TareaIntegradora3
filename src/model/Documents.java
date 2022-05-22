@@ -7,7 +7,11 @@ private int year;
 private int [][] image;
 
 
-
+/**
+ * contructor of the class
+ * @param price
+ * @param year
+ */
 public Documents(double price, int year) {
     this.price = price;
     this.year = year;
@@ -15,7 +19,9 @@ public Documents(double price, int year) {
 
 
 }
-
+/**
+ * generate the image of the documents
+ */
 public void  generateImage(){
 
     for (int x=0; x < image.length; x++) {
@@ -27,8 +33,8 @@ public void  generateImage(){
 
 
 }
-
-public String printNumeric(){
+ 
+/**public String printNumeric(){
     String print ="";
     for (int i=0; i< image.length; i++ ) { // filas numbers.length
         for (int j = 0; j < image[0].length; j++) { //columnas numbers[0].length
@@ -37,12 +43,15 @@ public String printNumeric(){
         print += "\n";
     }
     return print;
-}
+}*/
 
 
 
 
-
+/**
+ * method that decrypts the soat image
+ * @return the number of the soat
+ */
 public String decryptionSoat(){
 String answer="";
     for (int x=0; x < image.length; x++) {
@@ -62,7 +71,10 @@ String answer="";
 return answer;
 
 }
-
+/**
+ * method of decrypting the image of the techno-mechanical revision
+ * @return the number  of the techno-mechanical revision
+ */
 public String decryptionTecno(){
     String answer="";
         for (int x=0; x < image.length; x++) {

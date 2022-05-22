@@ -18,10 +18,19 @@ public  abstract class Vehicle{
 	private TypeV typevehicle;
     private String id;
 	
-
-
-
-	public Vehicle( double basePrice, String brand, int model, double displacement, double kilometers, String plate, Soat soat, TecnoMecanic tecnoMecanic,TypeV typevehicle){
+/**
+ * constructor of the class 
+ * @param basePrice
+ * @param brand
+ * @param model
+ * @param displacement
+ * @param kilometers
+ * @param plate
+ * @param soat
+ * @param tecnoMecanic
+ * @param typevehicle
+ */
+ 	public Vehicle( double basePrice, String brand, int model, double displacement, double kilometers, String plate, Soat soat, TecnoMecanic tecnoMecanic,TypeV typevehicle){
 		
 		this.basePrice=basePrice;
 		this.sellPrice=0;
@@ -42,7 +51,9 @@ public  abstract class Vehicle{
 	}
 	
 	
-
+/**
+ * method that generate the image of the property card of a vehicle
+ */
 public void generatePropertyCard(){
 
     for (int x=0; x < propertyCard.length; x++) {
@@ -56,7 +67,10 @@ public void generatePropertyCard(){
 }
 
 
-	
+	/**
+     * method that decrypts the image of the property card
+     * @return message with the number of the property card
+     */
 public String decryptionPropertyCard(){
     String answer="";
         for (int x=3; x >=0; x--) {
@@ -71,7 +85,10 @@ public String decryptionPropertyCard(){
     
     }
 	
-	
+	/**
+     * method that show the information of the documents if the vehicle have
+     * @return message with the information of the documents or advising thtat the vehicle doesn´t have documents
+     */
 	public String documents(){
 String answer="";
 String s="";

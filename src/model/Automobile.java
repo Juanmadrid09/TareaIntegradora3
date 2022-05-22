@@ -7,7 +7,21 @@ private String polarizedWindows;
 private TypeA typeAutomobile;
 
 
-
+/**
+ * constructor of the class
+ * @param basePrice
+ * @param brand
+ * @param model
+ * @param displacement
+ * @param kilometers
+ * @param plate
+ * @param soat
+ * @param tecnoMecanic
+ * @param typevehicle
+ * @param numberDoors
+ * @param polarizedWindows
+ * @param typeAutomobile
+ */
     public Automobile(double basePrice, String brand, int model, double displacement, double kilometers,
         String plate, Soat soat, TecnoMecanic tecnoMecanic, TypeV typevehicle, int numberDoors, String polarizedWindows,
         TypeA typeAutomobile) {

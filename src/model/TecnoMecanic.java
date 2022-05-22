@@ -9,7 +9,7 @@ public TecnoMecanic(double price, int year, double levelGas) {
     this.levelGas = levelGas;
 }
 
-
+@Override
 public void generateImage(){
 
     super.generateImage();

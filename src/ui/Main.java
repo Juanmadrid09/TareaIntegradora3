@@ -29,7 +29,10 @@ public class Main{
 		}while (option!=0);
 		
 	}
-	
+	/**
+     * Method that shows the menu of the program
+     * @return int the option that the user has selected
+     */
 	public int showMenu() {
 		int option=0;
 
@@ -47,7 +50,10 @@ public class Main{
 		sc.nextLine();
 		return option;
 	}
-	
+	 /**
+     * Method that executes the option that the user has entered
+     * @param option with the number of the option that the user has selected
+     */
 	public void executeOperation(int operation) {
 		
 		switch(operation) {
@@ -84,7 +90,9 @@ public class Main{
 	
 
 	}
-
+/**
+ * Method that executes the first option of the menu
+ */
 public void registrarVehiculo(){
 
 
@@ -294,7 +302,9 @@ break;
 
 	
 }
-
+/**
+ * Method that executes the option 2 of the menu
+ */
 public void calculatePrice(){
 
 	System.out.println("Por favor ingrese el id del vehiculo del cual quiere saber su precio total");
@@ -304,13 +314,17 @@ System.out.println(counselor.calculatePrice(id));
 
 
 }
-
+/**
+ * Method that executes the option 3 of the menu
+ */
 public void generateInfo(){
 	System.out.println("\n");
 counselor.ShowVehicles();
 
 }
-
+/**
+ * Method that executes the option 4 of the menu
+ */
 public void generateDocs(){
 
 	System.out.println("Por favor ingrese el id del vehiculo del cual quiere saber la informacion de sus documentos");
@@ -323,7 +337,9 @@ public void generateDocs(){
 
 }
 
-
+/**
+ * Method that executes the option 5 of the menu
+ */
 public void map(){
 
 	System.out.println("\n");
@@ -335,7 +351,9 @@ public void map(){
 
 }
 
-
+/**
+ * Method that executes the option 6 of the menu
+ */
 public void ocupationParking(){
 
 	int option=0;
